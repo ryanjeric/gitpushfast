@@ -5,6 +5,7 @@
 
 ### Installation:
 To install git-push-fast, use npm:
+
 ```sh
 npm install -g git-push-fast
 ```
@@ -17,35 +18,27 @@ Default Commands:
 - Pull Changes
 
 ```sh
-gitpull
+pll
 ```
 - Pull Changes to specific branch:
 ```sh
-gitpull --bn feature-branch
+pll --bn feature-branch
 ```
 
 - Add + Commit + Push Changes:
 ```sh
-gitpush
+psh
 ```
 - Add + Commit + Push Changes to specific branch:
 ```sh
-gitpush --bn feature-branch
+psh --bn feature-branch
 ```
 
-### Custom Commands
-```sh
-gitpushfast config --push=your_push_command --pull=your_pull_command
-```
 
-```
 SAMPLE Commit meesage:
-
-Changes made! - Files updated: index.js,config.js
-
 ```
-
-
+Changes made! - Files updated: index.js,config.js
+```
 
 ## Configuration:
 The configuration is stored in a config.json file in the installation directory. You can update this file manually if needed.

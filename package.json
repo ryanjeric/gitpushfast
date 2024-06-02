@@ -1,15 +1,11 @@
 {
   "name": "git-push-fast",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A tool to push changes to your git repository quickly",
   "main": "index.js",
   "bin": {
     "pll": "./pull.js",
-    "psh": "./push.js",
-    "gitpushfast": "./index.js"
-  },
-  "scripts": {
-    "start": "node index.js"
+    "psh": "./push.js"
   },
   "dependencies": {
     "commander": "^9.0.0",
