@@ -13,12 +13,19 @@ const branch = options.bn || 'master';  // Default branch if --bn is not provide
 
 git.status()
   .then((status) => {
-    const filesChanged = status.files.map(file => file.path).join(', ');
-    // TODO: commit msg can be replace with AI, Check diff and auto generate commit using AI.
-    const commitMessage = `Changes made! - Files updated: ${filesChanged}`;
+    const addedFiles = status.created.map(file => file.path).join(', ');
+    const modifiedFiles = status.modified.map(file => file.path).join(', ');
+    const deletedFiles = status.deleted.map(file => file.path).join(', ');
+
+    let commitMessage = 'Changes made!';
+    if (addedFiles) commitMessage += `\nAdded: ${addedFiles}`;
+    if (modifiedFiles) commitMessage += `\nModified: ${modifiedFiles}`;
+    if (deletedFiles) commitMessage += `\nDeleted: ${deletedFiles}`;
+
     return git.add('.')
       .then(() => git.commit(commitMessage))
       .then(() => git.push('origin', branch))
+      .then(() => console.log(`Commit Message: ${commitMessage}`))
       .then(() => console.log(`Changes pushed successfully to ${branch}`))
       .catch((err) => console.error('Error pushing changes:', err));
   })
