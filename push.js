@@ -15,7 +15,7 @@ git.status()
   .then((status) => {
     const addedFiles = status.created.map(file => file.path).join(', ');
     const modifiedFiles = status.modified.map(file => file.path).join(', ');
-    const deletedFiles = status.deleted.map(file => file.path).join(', ');
+    const deletedFiles = status.deleted.map(file => file.path).join(', '); 
 
     let commitMessage = 'Changes made!';
     if (addedFiles) commitMessage += `\nAdded: ${addedFiles}`;
