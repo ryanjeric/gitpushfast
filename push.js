@@ -13,13 +13,16 @@ const branch = options.bn || 'master';  // Default branch if --bn is not provide
 
 git.status()
   .then((status) => {
-    const addedFiles = status.created.map(file => file.path).join(', ');
-    const modifiedFiles = status.modified.map(file => file.path).join(', ');
-    const deletedFiles = status.deleted.map(file => file.path).join(', '); 
+    const addedFiles = status.created.map(file => file).join(', ');
+    const modifiedFiles = status.modified.map(file => file).join(', ');
+    const deletedFiles = status.deleted.map(file => file).join(', ');
+
+    const renamedFiles = status.renamed.map(file => file).join(', ');
 
     let commitMessage = 'Changes made!';
     if (addedFiles) commitMessage += `\nAdded: ${addedFiles}`;
     if (modifiedFiles) commitMessage += `\nModified: ${modifiedFiles}`;
+    if (renamedFiles) commitMessage += `\rRenamed: ${renamedFiles}`;
     if (deletedFiles) commitMessage += `\nDeleted: ${deletedFiles}`;
 
     return git.add('.')
