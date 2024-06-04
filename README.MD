@@ -35,7 +35,7 @@ psh --bn feature-branch
 ```
 
 ## Contributing:
-We welcome contributions! Please submit a pull request or open an issue to get started.
+I welcome contributions! Please submit a pull request or open an issue to get started.
 
 # License:
 This project is open source and licensed under the ISC License.
