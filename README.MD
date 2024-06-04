@@ -34,15 +34,6 @@ psh
 psh --bn feature-branch
 ```
 
-
-SAMPLE Commit meesage:
-```
-Changes made! - Files updated: index.js,config.js
-```
-
-## Configuration:
-The configuration is stored in a config.json file in the installation directory. You can update this file manually if needed.
-
 ## Contributing:
 We welcome contributions! Please submit a pull request or open an issue to get started.
 
